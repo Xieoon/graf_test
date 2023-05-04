@@ -12,7 +12,7 @@ const info={
   yInfo:[]
 }
 data.data.result[0].values.forEach(element => {
-  info.xInfo.push(`${(new Date(element[0]*1000)).getHours()}`+':'+`${(new Date(element[0]*1000)).getMinutes()}`)
+  info.xInfo.push(`${(new Date(element[0]*1000)).getHours()}:${(new Date(element[0]*1000)).getMinutes()}`)
   info.yInfo.push(Math.round(element[1]*100))
 });
 console.log(info);
