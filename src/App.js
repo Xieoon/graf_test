@@ -12,8 +12,8 @@ const info={
   yInfo:[]
 }
 data.data.result[0].values.forEach(element => {
-  info.xInfo.push(element[0])
-  info.yInfo.push(element[1])
+  info.xInfo.push(`${(new Date(element[0]*1000)).getHours()}`+':'+`${(new Date(element[0]*1000)).getMinutes()}`)
+  info.yInfo.push(Math.round(element[1]*100))
 });
 console.log(info);
   return (
@@ -27,11 +27,6 @@ console.log(info);
               id: 1,
               label: "22",
               data: info.yInfo,
-            },
-            {
-              id: 2,
-              label: "12",
-              data: [3, 2, 1],
             },
           ],
         }}
